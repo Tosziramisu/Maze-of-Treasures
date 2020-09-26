@@ -57,8 +57,16 @@ namespace MazeOfTreasures.GameScene.UI
 
         public void ShowPauseScreen()
         {
-            Time.timeScale = 0;
-            Cursor.visible = true;
+            if(pauseScreen.activeSelf == false)
+            {
+                Time.timeScale = 0;
+                Cursor.visible = true;
+            }
+            else
+            {
+                Time.timeScale = 1;
+                Cursor.visible = false;
+            }
 
             pauseScreen.SetActive(!pauseScreen.activeSelf);
         }
