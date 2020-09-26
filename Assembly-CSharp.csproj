@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{321e3caf-3a73-8295-4eea-f5fc929dadd6}</ProjectGuid>
+    <ProjectGuid>{9083e3d8-643a-ce27-4546-3834d26fce0b}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -36,20 +36,21 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Enemy\Patrol\PatrolState.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\Enemy\Patrol\PatrolRoute.cs" />
-     <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine.cs" />
-     <Compile Include="Assets\Scripts\Enemy\PlayerAware\PlayerAwareState.cs" />
-     <Compile Include="Assets\Scripts\State.cs" />
-     <Compile Include="Assets\Scripts\Enemy\Patrol\PatrolRouteNode.cs" />
-     <Compile Include="Assets\Scripts\Enemy\PlayerAware\PlayerDetector.cs" />
-     <Compile Include="Assets\Scripts\Enemy\PlayerAware\MoveToPlayerLastKnownPositionState.cs" />
-     <Compile Include="Assets\Scripts\Enemy\PlayerAware\InFrontPlayerDetector.cs" />
-     <Compile Include="Assets\Scripts\UI\EndGame.cs" />
-     <Compile Include="Assets\Scripts\UI\TreasureManager.cs" />
-     <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
-     <Compile Include="Assets\Scripts\UI\InGameMenu.cs" />
+     <Compile Include="Assets\Scripts\GameSceneScripts\Enemy\Patrol\PatrolState.cs" />
+     <Compile Include="Assets\Scripts\GameSceneScripts\Player\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\GameSceneScripts\Enemy\Patrol\PatrolRoute.cs" />
+     <Compile Include="Assets\Scripts\GameSceneScripts\Enemy\EnemyStateMachine.cs" />
+     <Compile Include="Assets\Scripts\GameSceneScripts\Enemy\PlayerAware\PlayerAwareState.cs" />
+     <Compile Include="Assets\Scripts\GameSceneScripts\Enemy\State.cs" />
+     <Compile Include="Assets\Scripts\GameSceneScripts\Camera\CameraController.cs" />
+     <Compile Include="Assets\Scripts\GameSceneScripts\Enemy\Patrol\PatrolRouteNode.cs" />
+     <Compile Include="Assets\Scripts\GameSceneScripts\Enemy\PlayerAware\PlayerDetector.cs" />
+     <Compile Include="Assets\Scripts\GameSceneScripts\Enemy\PlayerAware\MoveToPlayerLastKnownPositionState.cs" />
+     <Compile Include="Assets\Scripts\GameSceneScripts\UI\TreasureManager.cs" />
+     <Compile Include="Assets\Scripts\MainMenuSceneScripts\UI\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\GameSceneScripts\UI\StateOfGame.cs" />
+     <Compile Include="Assets\Scripts\GameSceneScripts\UI\InGameMenu.cs" />
+     <Compile Include="Assets\Scripts\GameSceneScripts\Enemy\PlayerAware\InFrontPlayerDetector.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -585,31 +586,31 @@
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.6f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>C:/Users/Paździoch/Desktop/All shit/Unity stuff/NewSolutionTry/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>C:/Users/Paździoch/Desktop/All shit/Unity stuff/MazeOfTreasures/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>C:/Users/Paździoch/Desktop/All shit/Unity stuff/NewSolutionTry/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>C:/Users/Paździoch/Desktop/All shit/Unity stuff/MazeOfTreasures/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>C:/Users/Paździoch/Desktop/All shit/Unity stuff/NewSolutionTry/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>C:/Users/Paździoch/Desktop/All shit/Unity stuff/MazeOfTreasures/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>C:/Users/Paździoch/Desktop/All shit/Unity stuff/NewSolutionTry/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+        <HintPath>C:/Users/Paździoch/Desktop/All shit/Unity stuff/MazeOfTreasures/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>C:/Users/Paździoch/Desktop/All shit/Unity stuff/NewSolutionTry/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+        <HintPath>C:/Users/Paździoch/Desktop/All shit/Unity stuff/MazeOfTreasures/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>C:/Users/Paździoch/Desktop/All shit/Unity stuff/NewSolutionTry/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+        <HintPath>C:/Users/Paździoch/Desktop/All shit/Unity stuff/MazeOfTreasures/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>C:/Users/Paździoch/Desktop/All shit/Unity stuff/NewSolutionTry/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+        <HintPath>C:/Users/Paździoch/Desktop/All shit/Unity stuff/MazeOfTreasures/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>C:/Users/Paździoch/Desktop/All shit/Unity stuff/NewSolutionTry/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+        <HintPath>C:/Users/Paździoch/Desktop/All shit/Unity stuff/MazeOfTreasures/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>C:/Users/Paździoch/Desktop/All shit/Unity stuff/NewSolutionTry/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+        <HintPath>C:/Users/Paździoch/Desktop/All shit/Unity stuff/MazeOfTreasures/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

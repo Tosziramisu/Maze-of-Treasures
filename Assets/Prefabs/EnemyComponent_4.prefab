@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 4932538335563192556}
   - component: {fileID: 4932538335563192546}
   - component: {fileID: 4932538335563192547}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,8 +105,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerStillVisible: 0
-  isEnemyCatchedPlayer: 0
-  endgame: {fileID: 0}
   agent: {fileID: 4932538337142285334}
 --- !u!1 &4932538335824456540
 GameObject:
@@ -162,8 +160,7 @@ GameObject:
   - component: {fileID: 4932538336332558275}
   - component: {fileID: 4932538336332558272}
   - component: {fileID: 4932538336332558273}
-  - component: {fileID: 4932538336332558274}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,20 +230,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &4932538336332558274
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4932538336332558284}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4932538336429011771
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4932538336429011770}
   - component: {fileID: 4932538336429011769}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -521,9 +504,10 @@ GameObject:
   - component: {fileID: 4932538337142285334}
   - component: {fileID: 4932538337142285335}
   - component: {fileID: 4932538337142285333}
-  m_Layer: 0
+  - component: {fileID: 7820412130076798646}
+  m_Layer: 10
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -554,8 +538,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 10
-  m_Acceleration: 8
+  m_Speed: 11
+  m_Acceleration: 60
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -594,3 +578,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialState: {fileID: 4932538337142285335}
+--- !u!136 &7820412130076798646
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4932538337142285329}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
