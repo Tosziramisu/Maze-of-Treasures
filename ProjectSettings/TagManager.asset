@@ -7,6 +7,9 @@ TagManager:
   - StartingPoint
   - Treasure
   - Enemy
+  - SpeedBooster
+  - InvisibleItem
+  - PlayerBecomeInvisible
   layers:
   - Default
   - TransparentFX

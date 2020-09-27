@@ -46,11 +46,16 @@
      <Compile Include="Assets\Scripts\GameSceneScripts\Enemy\Patrol\PatrolRouteNode.cs" />
      <Compile Include="Assets\Scripts\GameSceneScripts\Enemy\PlayerAware\PlayerDetector.cs" />
      <Compile Include="Assets\Scripts\GameSceneScripts\Enemy\PlayerAware\MoveToPlayerLastKnownPositionState.cs" />
-     <Compile Include="Assets\Scripts\GameSceneScripts\UI\TreasureManager.cs" />
+     <Compile Include="Assets\Scripts\GameSceneScripts\Pickable Items\TreasureManager.cs" />
      <Compile Include="Assets\Scripts\MainMenuSceneScripts\UI\MainMenu.cs" />
-     <Compile Include="Assets\Scripts\GameSceneScripts\UI\StateOfGame.cs" />
+     <Compile Include="Assets\Scripts\GameSceneScripts\StateOfGame.cs" />
      <Compile Include="Assets\Scripts\GameSceneScripts\UI\InGameMenu.cs" />
      <Compile Include="Assets\Scripts\GameSceneScripts\Enemy\PlayerAware\InFrontPlayerDetector.cs" />
+     <Compile Include="Assets\Scripts\GameSceneScripts\Player\PlayerCollisionManager.cs" />
+     <Compile Include="Assets\Scripts\GameSceneScripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\GameSceneScripts\Player\EffectsOnPlayer.cs" />
+     <Compile Include="Assets\Scripts\GameSceneScripts\Music\MusicPlayer.cs" />
+     <Compile Include="Assets\Scripts\GameSceneScripts\Music\MusicManager.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MazeOfTreasures.GameScene.Music;
 
 namespace MazeOfTreasures.GameScene.Enemy.PlayerAware
 {
@@ -43,6 +44,10 @@ namespace MazeOfTreasures.GameScene.Enemy.PlayerAware
                     if(hit.transform.position == playerAwareState.playerPosition)
                     {
                         playerAwareState.isPlayerStillVisible = true; 
+                        if(MusicManager.SharedInstance.currentMusic != 1)
+                        {
+                            MusicManager.SharedInstance.playingPlayerSpottedMusic = true;
+                        }
                         spotLight.color = Color.red;
                         return true;
                     }

@@ -3,29 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using MazeOfTreasures.GameScene.Player;
 
 namespace MazeOfTreasures.GameScene.UI
 {
     internal class InGameMenu : MonoBehaviour
     {
         [SerializeField] private Text remainingTreasures = default;
+        [SerializeField] private Text resultText = default;
+        [SerializeField] private Text hasteText = default;
+        [SerializeField] private Text invisibilityText = default;
 
         [SerializeField] private TreasureManager treasureManager = default;
 
         [SerializeField] private GameObject resultScreen = default;
         [SerializeField] private GameObject pauseScreen = default;
 
-        [SerializeField] private Text resultText = default;
-
-
         private int currentremainingTreasuresCount;
 
         private void Start()
         {
-            StateOfGame.SharedInstance.isGameFinished = false;
-            StateOfGame.SharedInstance.isGameWon = false;
-            StateOfGame.SharedInstance.isGameLost = false;
-
             Time.timeScale = 1;
             Cursor.visible = false;
             
@@ -45,6 +42,55 @@ namespace MazeOfTreasures.GameScene.UI
 
             if(StateOfGame.SharedInstance.getIsGameFinished())
                 ShowResultScreen();   
+
+            DisplayPlayerEffects();
+        }
+
+        private void DisplayPlayerEffects()
+        {
+            if(EffectsOnPlayer.SharedInstance.invisibleItemFound)
+            {
+                EffectsOnPlayer.SharedInstance.invisibleItemFound = false;
+                invisibilityText.text = "Invisibility: Found (Press \"I\" to activate)";
+            }
+
+            if(EffectsOnPlayer.SharedInstance.invisibleItemUsed)
+            {
+                EffectsOnPlayer.SharedInstance.invisibleItemUsed = false;
+                invisibilityText.text = "Invisibility: Active";
+                StartCoroutine(DisplayInvisibleEffect(EffectsOnPlayer.SharedInstance.invisibleItemDuration, "Invisibility: none"));
+            }
+
+            if(EffectsOnPlayer.SharedInstance.hasteItemFound)
+            {
+                EffectsOnPlayer.SharedInstance.hasteItemFound = false;
+                hasteText.text = "Haste: Active";
+                StartCoroutine(DisplayHasteEffect(EffectsOnPlayer.SharedInstance.hasteItemDuration, "Haste: none"));
+            }
+        }
+
+        private IEnumerator DisplayInvisibleEffect(float time, string textToDisplay)
+        {
+            float currentTime = time;
+            while(currentTime != 0)
+            {
+                invisibilityText.text = textToDisplay.Substring(0, textToDisplay.Length-4)+"Active for "+currentTime.ToString()+" seconds";
+                yield return new WaitForSeconds(1f);
+                currentTime--;
+            }
+            invisibilityText.text = textToDisplay;
+        }
+
+        private IEnumerator DisplayHasteEffect(float time, string textToDisplay)
+        {
+            float currentTime = time;
+            while(currentTime != 0)
+            {
+                hasteText.text = textToDisplay.Substring(0, textToDisplay.Length-4)+"Active for "+currentTime.ToString()+" seconds";
+                yield return new WaitForSeconds(1f);
+                currentTime--;
+            }
+            hasteText.text = textToDisplay;
         }
 
         private void SetTheAmmountOfRemainingTreasures()

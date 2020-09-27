@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using MazeOfTreasures.GameScene.Music;
 
 namespace MazeOfTreasures.GameScene.Enemy.PlayerAware
 {
@@ -23,9 +24,11 @@ namespace MazeOfTreasures.GameScene.Enemy.PlayerAware
                     {
                         yield return new WaitForFixedUpdate();
                     }
+                    MusicManager.SharedInstance.playingExploringMusic = true;
                     enemyStateMachine.ResetStateMachine();
                 }
             }
+            MusicManager.SharedInstance.playingLostMusic = true;
             StateOfGame.SharedInstance.isGameLost = true;
             StateOfGame.SharedInstance.isGameFinished = true;
         }
