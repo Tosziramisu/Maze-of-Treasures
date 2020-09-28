@@ -11,34 +11,34 @@ namespace MazeOfTreasures.GameScene.Music
 
         private void Start()
         {
+            MusicManager.SharedInstance.audioClipsPlayingConditions = new bool[audioClipArray.Length]; 
+            //0 - PlayerSpotted | 1 - Exploring | 2 - Lost | 3 - Victory
+            for(int i=0; i<MusicManager.SharedInstance.audioClipsPlayingConditions.Length; i++)
+            {
+                MusicManager.SharedInstance.audioClipsPlayingConditions[i] = false;
+            }
             audioSource.clip = audioClipArray[0];
             audioSource.Play();
         }
 
         private void Update()
         {
-            if(MusicManager.SharedInstance.playingExploringMusic)
+            for(int i=0; i<MusicManager.SharedInstance.audioClipsPlayingConditions.Length; i++)
             {
-                audioSource.Stop();
-                MusicManager.SharedInstance.playingExploringMusic = false;
-                audioSource.clip = audioClipArray[0];
-                audioSource.Play();
+                if(MusicManager.SharedInstance.audioClipsPlayingConditions[i])
+                {
+                    audioSource.Stop();
+                    MusicManager.SharedInstance.audioClipsPlayingConditions[i] = false;
+                    audioSource.clip = audioClipArray[i];
+                    audioSource.Play();
+                }
             }
-            else if(MusicManager.SharedInstance.playingPlayerSpottedMusic)
+            
+            if (!audioSource.isPlaying)
             {
-                audioSource.Stop();
-                MusicManager.SharedInstance.playingPlayerSpottedMusic = false;
-                audioSource.clip = audioClipArray[1];
-                audioSource.Play();
-            }
-            else if(MusicManager.SharedInstance.playingLostMusic)
-            {
-                audioSource.Stop();
-                MusicManager.SharedInstance.playingLostMusic = false;
-                audioSource.clip = audioClipArray[2];
                 audioSource.Play();
             }
             MusicManager.SharedInstance.currentMusic = System.Array.IndexOf(audioClipArray, audioSource.clip);
         }
-    }
+    } 
 }

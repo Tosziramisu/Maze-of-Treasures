@@ -24,11 +24,11 @@ namespace MazeOfTreasures.GameScene.Enemy.PlayerAware
                     {
                         yield return new WaitForFixedUpdate();
                     }
-                    MusicManager.SharedInstance.playingExploringMusic = true;
+                    MusicManager.SharedInstance.audioClipsPlayingConditions[0] = true;
                     enemyStateMachine.ResetStateMachine();
                 }
             }
-            MusicManager.SharedInstance.playingLostMusic = true;
+            MusicManager.SharedInstance.audioClipsPlayingConditions[2] = true;
             StateOfGame.SharedInstance.isGameLost = true;
             StateOfGame.SharedInstance.isGameFinished = true;
         }

@@ -46,7 +46,7 @@ namespace MazeOfTreasures.GameScene.Enemy.PlayerAware
                         playerAwareState.isPlayerStillVisible = true; 
                         if(MusicManager.SharedInstance.currentMusic != 1)
                         {
-                            MusicManager.SharedInstance.playingPlayerSpottedMusic = true;
+                            MusicManager.SharedInstance.audioClipsPlayingConditions[1] = true;
                         }
                         spotLight.color = Color.red;
                         return true;
@@ -61,7 +61,7 @@ namespace MazeOfTreasures.GameScene.Enemy.PlayerAware
         
         private bool CalculatePlayerPosition()
         {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, range);
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, range+30);
             foreach (var hitCollider in hitColliders)
             {
                 if(hitCollider.tag == "Player")

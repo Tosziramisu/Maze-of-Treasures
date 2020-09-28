@@ -13,6 +13,7 @@ namespace MazeOfTreasures.GameScene.UI
         [SerializeField] private Text resultText = default;
         [SerializeField] private Text hasteText = default;
         [SerializeField] private Text invisibilityText = default;
+        [SerializeField] private Text pauseText = default;
 
         [SerializeField] private TreasureManager treasureManager = default;
 
@@ -105,15 +106,17 @@ namespace MazeOfTreasures.GameScene.UI
         {
             if(pauseScreen.activeSelf == false)
             {
+                pauseText.enabled = false;
                 Time.timeScale = 0;
                 Cursor.visible = true;
             }
             else
             {
+                pauseText.enabled = true;
                 Time.timeScale = 1;
                 Cursor.visible = false;
             }
-
+            
             pauseScreen.SetActive(!pauseScreen.activeSelf);
         }
 

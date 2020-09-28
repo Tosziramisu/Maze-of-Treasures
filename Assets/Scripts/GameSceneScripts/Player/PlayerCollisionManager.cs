@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MazeOfTreasures.GameScene.Music;
 
 namespace MazeOfTreasures.GameScene.Player
 {
@@ -35,7 +36,10 @@ namespace MazeOfTreasures.GameScene.Player
         {
             if (hit.transform.tag == "StartingPoint"){
                 if(StateOfGame.SharedInstance.getIsGameWon())
+                {
+                    MusicManager.SharedInstance.audioClipsPlayingConditions[3] = true;
                     StateOfGame.SharedInstance.isGameFinished = true;
+                }
             }
 
             if (hit.transform.tag == "Treasure"){
@@ -43,6 +47,7 @@ namespace MazeOfTreasures.GameScene.Player
             }
 
             if (hit.gameObject.layer == 10){
+                MusicManager.SharedInstance.audioClipsPlayingConditions[2] = true;
                 StateOfGame.SharedInstance.isGameLost = true;
                 StateOfGame.SharedInstance.isGameFinished = true;
             }

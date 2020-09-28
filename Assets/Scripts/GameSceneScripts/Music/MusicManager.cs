@@ -15,10 +15,8 @@ namespace MazeOfTreasures.GameScene.Music
                     return instance;
                 }
             }
-        
-        internal bool playingPlayerSpottedMusic = false;
-        internal bool playingExploringMusic = false;
-        internal bool playingLostMusic = false;
+      
+        internal bool[] audioClipsPlayingConditions;//0 - PlayerSpotted | 1 - Exploring | 2 - Lost | 3 - Victory
         internal int currentMusic = 0;
 
     }

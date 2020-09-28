@@ -17,10 +17,6 @@ namespace MazeOfTreasures.GameScene
             EffectsOnPlayer.SharedInstance.invisibleItemFound = false;
             EffectsOnPlayer.SharedInstance.invisibleItemUsed = false;
             EffectsOnPlayer.SharedInstance.hasteItemFound = false;
-
-            MusicManager.SharedInstance.playingPlayerSpottedMusic = false;
-            MusicManager.SharedInstance.playingExploringMusic = false;
-            MusicManager.SharedInstance.playingLostMusic = false;
         }
     }
 }
